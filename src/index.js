@@ -1,19 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore} from 'redux';
+import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
-import positionReducer from './reducers/reducers'
+import {positionReducer, huntersReducer} from './reducers/reducers'
 import Rabbit from './components/Rabbit'
 import Hunter from './components/Hunter'
 import Layout from './components/Layout'
+import FormHunters from './components/FormHunters'
 
-const store = createStore(positionReducer, {x: 0, y: 0});
+let reducers = combineReducers({
+    positionState: positionReducer,
+    huntersState: huntersReducer
+})
+const store = createStore(reducers);
+
+console.log(store.getState());
 
 ReactDOM.render(
     <Provider store={store}>
         <Layout>
             <Rabbit/>
-            <Hunter/>
+            <FormHunters/>
         </Layout>
     </Provider>,
     document.getElementById("div1")

@@ -8,8 +8,8 @@ class Hunter extends React.Component {
     
     render(){
         return(
-            <div className="hunter">
-                <span>Hunter:</span>
+            <div>
+                <span>{this.props.name}:</span>
                 {this.props.x};{this.props.y}
             </div>
         )
@@ -18,8 +18,8 @@ class Hunter extends React.Component {
 
 const mapStateToProps= state => {
     return{
-        x: state.x,
-        y: state.y
+        x: state.positionState.x,
+        y: state.positionState.y
     }
 }
 

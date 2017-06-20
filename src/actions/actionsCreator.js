@@ -5,3 +5,9 @@ export const changePosition = (x, y) => {
         y
     }
 }
+export const addHunter = (hunter) => {
+    return{
+        type: 'ADD_HUNTER',
+        hunter
+    }
+}

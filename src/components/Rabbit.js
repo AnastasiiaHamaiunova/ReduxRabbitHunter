@@ -35,9 +35,9 @@ class Rabbit extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return{
-        x: state.x,
-        y: state.y
+    return {
+        x: state.positionState.x,
+        y: state.positionState.y
     }
 }
 
