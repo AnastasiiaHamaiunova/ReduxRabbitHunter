@@ -85,7 +85,9 @@ module.exports = {
         compress: true,
         hot: true,
         stats: "errors-only",
-        open: true
+        open: true,
+        historyApiFallback: true,
+        contentBase: './'
     },
     plugins: [
         new HtmlWebpackPlugin({

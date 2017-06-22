@@ -9,8 +9,13 @@ class Hunter extends React.Component {
     render(){
         return(
             <div>
-                <span>{this.props.name}:</span>
+                <img src={this.props.img}/><br/>
+                <span>{this.props.name} must be on:</span><br/>
+                
                 {this.props.x};{this.props.y}
+                <span>{this.props.gender}:</span>                
+
+                
             </div>
         )
     }
