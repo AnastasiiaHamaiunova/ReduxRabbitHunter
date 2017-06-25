@@ -33,6 +33,7 @@ class FormHunters extends React.Component{
                             key={this.props.hunters.length}/>
         }));
     }
+    
 
     onImgLinkChange(e){
         let imgLink = e.target.value;
@@ -47,21 +48,45 @@ class FormHunters extends React.Component{
     render() {
         return (
             <div className="formHunter">
+				<h3>Add Follower</h3>
+               
+				<label>Your name</label>
                 <input
                     type='text'
                     onChange={this.onNameChange}
-                /><br/>
-                <input type="radio" name="gender" value="male" onChange={this.onGenderChange}/> Male <br/>
-                <input type="radio" name="gender" value="female" onChange={this.onGenderChange}/>Female<br/>
-                <input type="text" onChange={this.onImgLinkChange}/><br/>
-                <button onClick={this.onHunterAdd}>Add</button>
-                <div>
+					className=""
+					placeholder="Name"
+					id="nameHunter"
+                />
+         
+                <input type="radio" 
+						name="gender" 
+						value="male" 
+						onChange={this.onGenderChange}
+						className=""/>Male 
+                <input 
+						type="radio" 
+						name="gender" 
+						value="female" 
+						onChange={this.onGenderChange}
+						className=""/>Female
+                <input  
+                        onChange={this.onImgLinkChange}
+                        className="form-control"
+                        placeholder="url"
+                        type="text"/>
+                <button onClick={this.onHunterAdd} 
+						className=""
+						>Add</button> 
+             <div>
                     {this.props.hunters.map(item =>{
                         return item.hunter
                     })}
-                </div>
-
+            </div>              
+            
             </div>
+          
+            
         )
     }    
 }

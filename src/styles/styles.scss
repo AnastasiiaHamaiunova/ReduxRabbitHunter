@@ -1,0 +1,208 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body{
+    font-family:  "Roboto", Helvetica, Arial, sans-serif;
+}
+.rabbit{
+    float: left;
+    width: 600px;
+    height: 600px;
+    background-color: #4CAF50;
+    margin: 10px;
+}
+.rabbit div{
+    position: relative;
+    background-image:url(../img/rabbit-icons-23313.png);
+    background-size: 50px, 50px;
+    width: 50px;
+    height: 50px;
+    transition-duration: 2s;
+}
+.rabbit-position{
+    margin:10px;
+    float: left;
+}
+.formHunter{
+    font-size: 16px;
+    margin: 35px;
+    position: relative;
+	width:50%; 
+	padding: 25px;	
+    float:left;
+}
+
+.formHunter>h3, 
+.hunters-list>h3,
+.profile>h3,
+.shoot>h3{
+	display: block;
+	font-size: 30px;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+::-webkit-input-placeholder {
+	color: #3e3e3e;
+	}
+::-moz-placeholder{
+	color:#3e3e3e;
+	}
+:-moz-placeholder
+	{
+	color:#3e3e3e;
+	}
+:-ms-input-placeholder{
+	color:#3e3e3e;
+	}
+input[type="text"],
+input[type="url"],
+input[type="number"]{
+    display: block;
+    background-color: #3CBC8D;
+    color: #3e3e3e;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+}
+.formHunter button{
+	cursor: pointer;
+	width: 300px;
+	border: none;
+	background: #4CAF50;
+	color: #FFF;
+	padding: 10px;
+	font-size: 15px;
+}
+.formHunter button:hover {
+    background: #43A047;
+    color: #FFF;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+.menu{
+    background-color: #888;
+}
+.menu li:first-child{
+    margin-left: 25px;
+}
+.menu li{
+    display: inline-block; 
+    padding:25px;   
+}
+.menu li a{
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:#FFF;
+}
+.menu li:hover{
+    background-color:#4CAF50; 
+}
+input[name='gender'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: none;
+    
+    &:after {
+        font-family: 'FontAwesome';
+        display: inline-block;
+        text-align: center;
+        font-size: 24px;
+        content: attr(data-icon);
+        padding: 5px;
+        border-radius: 5px;
+        color: rgba(0,0,0,.4);
+        transition: box-shadow 1s, color 1s;
+    }
+    
+    &:checked {
+        &:after {
+            color:#FFF;
+            background-color: #4CAF50;
+        }
+    }
+}
+.hunters-list{
+    margin: 35px;
+    padding:15px;
+    float: left;
+    width: 300px;
+}
+.hunters-list li{
+    list-style: none;
+    color:#3e3e3e;
+    cursor: pointer;
+    padding: 5px;
+}
+.hunters-list a{
+    color:#3e3e3e;
+    text-decoration: none;
+}
+.hunters-list a:hover{
+    text-decoration:underline;
+    color:#4CAF50;
+}
+.profile{
+    color:#3e3e3e;
+    margin: 35px;
+}
+.profile, 
+.profile-info{
+    float:left;
+    height: 200px;
+}
+.profile-img{
+    float: left;
+    width: 200px;
+    height: 200px;
+    background-size: 200px 200px;
+    margin-right: 20px;
+}
+
+.profile-info div span{ 
+    background-color: #43A047;
+    color:white;
+    height: 35px;
+    width: auto;
+    padding: 7px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.profile-info div{
+    margin-bottom: 5px;
+}
+.grid{
+    height: 525px;
+    width: 525px;
+    background-image: url(../img/grid.png);
+}
+.aim{
+    background-image: url(../img/aim.png);
+    background-size: 25px 25px;
+    height: 25px;
+    width: 25px;
+}
+.shoot{
+    margin-left:200px;
+    float: left;
+}
