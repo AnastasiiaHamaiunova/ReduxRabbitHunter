@@ -27,10 +27,12 @@ ReactDOM.render(
                     <li><Link to="/rabbit">Rabbit</Link></li>
                     <li><Link to="/hunters">Hunters</Link></li>
                 </ul>
-                <Route exact path='/' component={Home}/>     
-                <Route path='/rabbit' component={Rabbit}/>
-                <Route path='/hunters' component={HuntersForm}/>
-                <Route path='/hunter/:id' component={Hunter}/>
+                
+                    <Route exact path='/' component={Home}/>     
+                    <Route path='/rabbit' component={Rabbit}/>
+                    <Route path='/hunters' component={HuntersForm}/>
+                    <Route path='/hunter/:id' component={Hunter}/>
+                
             </div>
         </Router>
     </Provider>,

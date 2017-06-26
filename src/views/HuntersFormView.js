@@ -54,9 +54,9 @@ export default class Form extends React.Component{
                         {this.props.hunters.map((item, index) =>{
                             return (
                                 <li key={index}>
-                                    <Link to={`/hunter/${index+1}`} > {item.name}</Link> 
-                                </li>)
-                        })}
+                                    <Link to={`/hunter/${index+1}`}>{item.name}</Link> 
+                                </li>
+                            )})}
                     </ul>
                 </div> 
             </div>

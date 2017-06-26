@@ -87,7 +87,8 @@ module.exports = {
         stats: "errors-only",
         open: true,
         historyApiFallback: true,
-        contentBase: './'
+        contentBase: './',
+		port: 3000
     },
     plugins: [
         new HtmlWebpackPlugin({

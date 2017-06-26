@@ -47,7 +47,8 @@ body{
 .formHunter>h3, 
 .hunters-list>h3,
 .profile>h3,
-.shoot>h3{
+.shoot>h3,
+.slider>h3{
 	display: block;
 	font-size: 30px;
 	font-weight: 300;
@@ -77,6 +78,7 @@ input[type="number"]{
     background: #FFF;
     padding: 10px;
     margin: 10px 0 10px 0;
+    font-size: 16px;
 }
 .formHunter button{
 	cursor: pointer;
@@ -147,7 +149,7 @@ input[name='gender'] {
     width: 300px;
 }
 .hunters-list li{
-    list-style: none;
+    list-style:none;
     color:#3e3e3e;
     cursor: pointer;
     padding: 5px;
@@ -159,6 +161,12 @@ input[name='gender'] {
 .hunters-list a:hover{
     text-decoration:underline;
     color:#4CAF50;
+}
+.hunter-aim span{
+    background-image: url(../img/aim.png);
+    height: 15px;
+    width: 15px;
+    background-size: 15px 15px;
 }
 .profile{
     color:#3e3e3e;
@@ -205,4 +213,22 @@ input[name='gender'] {
 .shoot{
     margin-left:200px;
     float: left;
+}
+.slider{
+    margin: 5px auto;
+    width: 100%;
+    height: 500px;
+    background-size: 700px 500px;
+    text-align: center;
+    background-image: url(../img/Bugs.png);
+    background-repeat: no-repeat;
+    background-position: 50px top;
+}
+.slider h1, .slider h2{
+    color:#888;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.slogan{
+    padding: 100px 0;
 }

@@ -11,6 +11,7 @@ class Hunter extends React.Component {
         return(
             <div className="profile">
                 <h3>{this.state.name}</h3>
+                
                 <div className="profile-img"style={{backgroundImage: `url(${this.state.img})`}}>
                 </div>
                 <div className="profile-info">
@@ -20,8 +21,7 @@ class Hunter extends React.Component {
                     <div><span>X</span>{this.props.x}<span>Y</span>{this.props.y}</div>
                 </div> 
                 <div className="shoot">
-                    <h3>Shoot!</h3>
-                    <div className="grid">
+                       <div className="grid">
                         <div className="aim" style={{transform: `translate(${this.props.x}px, ${this.props.y}px)`}}></div>
                     </div>  
                 </div>         
