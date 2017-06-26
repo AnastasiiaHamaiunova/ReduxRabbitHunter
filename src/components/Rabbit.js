@@ -10,10 +10,7 @@ class Rabbit extends React.Component {
 
     componentDidMount(){
         setInterval(()=>{
-            let x = Math.floor((Math.random() * 500) + 1);
-            let y = Math.floor((Math.random() * 500) + 1);
-
-            this.props.dispatch(positionActions.changePosition(x, y));
+            this.props.dispatch(positionActions.changePosition());
         }, 2000);
     }
 

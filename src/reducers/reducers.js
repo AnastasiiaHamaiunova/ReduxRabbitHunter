@@ -7,11 +7,22 @@ export function positionReducer (state = {x: 0, y: 0}, action){
             return state;
     }
 }
-export function huntersReducer(state = [], action){
+export function huntersReducer(state, action){
+    if(state === undefined){
+        let storageState = localStorage.getItem('hunters');
+        if(storageState !== null){
+            state = JSON.parse(storageState);
+        }
+        else{
+            state = [];
+        }
+    }
+
     switch(action.type){
         case 'ADD_HUNTER':
-            return [...state, Object.assign({}, action.hunter)];
-
+            let hunters =  [...state, Object.assign({}, action.hunter)];
+            localStorage.setItem('hunters',JSON.stringify(hunters));
+            return hunters;
         default:
             return state;
     }

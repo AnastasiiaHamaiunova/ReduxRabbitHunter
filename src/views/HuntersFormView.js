@@ -46,6 +46,7 @@ export default class Form extends React.Component{
                             type="text"/>
                     <button onClick={this.props.onHunterAdd} 
                             className=""
+                            disabled={!this.props.valid}
                             >Add</button>
                 </div>
                 <div className="hunters-list">

@@ -8,6 +8,10 @@ class HuntersForm extends React.Component{
         super(props);
 
         this.state = {
+            nameValid: false,
+            ageValid: false,
+            urlValid: false,
+            formValid: false,
             name: '',
             img: '',
             gender: '',
@@ -19,11 +23,44 @@ class HuntersForm extends React.Component{
         this.onImgLinkChange = this.onImgLinkChange.bind(this);
         this.onGenderChange = this.onGenderChange.bind(this);
         this.onAgeChange = this.onAgeChange.bind(this);
+        this.validateField =this.validateField.bind(this);
+    }
+
+    validateField(fieldName, value){
+        let urlValid = this.state.urlValid;
+        let ageValid = this.state.ageValid;
+        let nameValid = this.state.nameValid;
+
+        switch(fieldName){
+            case 'name':
+                nameValid = value.toString().trim().length > 0;
+                break;
+            case 'age':
+                ageValid = value >= 18 && value <= 65;
+                break;
+            case 'url':
+                urlValid = value.toString().match(/^((http[s]?):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/);
+                break;
+            default:
+                break;
+        }
+
+        let formValid = urlValid && ageValid && nameValid;
+        
+        setTimeout(() => 
+            this.setState(
+                Object.assign(
+                    {}, 
+                    this.state, 
+                    {urlValid, ageValid, nameValid, formValid}
+                )
+            ), 0);
     }
     
     onNameChange(e){
         let name = e.target.value;
         this.setState(Object.assign({},this.state,{name}));
+        this.validateField("name", name);
     }
 
     onHunterAdd(e){
@@ -38,6 +75,7 @@ class HuntersForm extends React.Component{
     onImgLinkChange(e){
         let img = e.target.value;
         this.setState(Object.assign({},this.state, {img}));
+        this.validateField("url", img);
     }
 
     onGenderChange(e){ 
@@ -48,6 +86,7 @@ class HuntersForm extends React.Component{
     onAgeChange(e){
         let age = e.target.value;
         this.setState(Object.assign({},this.state, {age}));
+        this.validateField("age", age);
     }
 
     render() {
@@ -57,7 +96,8 @@ class HuntersForm extends React.Component{
                 onGenderChange={this.onGenderChange}
                 onImgLinkChange={this.onImgLinkChange}
                 onHunterAdd={this.onHunterAdd}
-                hunters={this.props.hunters}/>
+                hunters={this.props.hunters}
+                valid={this.state.formValid}/>
         )
     }    
 }
